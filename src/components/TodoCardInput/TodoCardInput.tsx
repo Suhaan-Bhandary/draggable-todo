@@ -12,7 +12,8 @@ function TodoCardInput({ addCardToTodoSection }: Props) {
     setTodo(event.target.value);
   };
 
-  const handleCardAdd = () => {
+  const handleTodoSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     if (!todo.length) return;
 
     addCardToTodoSection(todo);
@@ -20,15 +21,15 @@ function TodoCardInput({ addCardToTodoSection }: Props) {
   };
 
   return (
-    <div className={styles.addTodoContainer}>
+    <form className={styles.addTodoContainer} onSubmit={handleTodoSubmit}>
       <input
         type="text"
         value={todo}
         onChange={handleTodoChange}
         placeholder="Add a todo..."
       />
-      <button onClick={handleCardAdd}>Add</button>
-    </div>
+      <button type="submit">Add</button>
+    </form>
   );
 }
 

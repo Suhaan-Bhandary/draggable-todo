@@ -17,8 +17,8 @@
 
 .deleteButton {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 8px;
+  right: 10px;
 
   width: 24px;
   aspect-ratio: 1/1;
