@@ -9,3 +9,7 @@
 
   border-radius: 5px;
 }
+
+.cardDragging {
+  border: 2px solid blue;
+}

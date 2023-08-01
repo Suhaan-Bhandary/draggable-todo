@@ -10,3 +10,7 @@
   overflow: auto;
   scrollbar-gutter: stable both-edges;
 }
+
+.draggedOver {
+  outline: 2px solid blue;
+}
