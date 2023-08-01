@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { TodoSection } from "../../types/todo.types";
 import Card from "../Card/Card";
 import styles from "./CardList.module.css";
 
-function CardList() {
+type Props = {
+  section: TodoSection;
+};
+
+function CardList({ section }: Props) {
   const [isDraggedOver, setIsDraggedOver] = useState(false);
 
   const handleDragOver = () => {
@@ -19,18 +24,15 @@ function CardList() {
         isDraggedOver ? styles.draggedOver : ""
       }`}
     >
-      <h2>Todo</h2>
+      <h2>{section.title}</h2>
       <div
         className={styles.CardsContainer}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
       >
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {section.cards.map((data) => (
+          <Card data={data} />
+        ))}
       </div>
     </div>
   );

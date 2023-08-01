@@ -7,6 +7,7 @@
 }
 
 .CardsContainer {
+  flex-grow: 1;
   overflow: auto;
   scrollbar-gutter: stable both-edges;
 }
