@@ -1,0 +1,11 @@
+.Card {
+  background-color: lightgrey;
+  margin-block: 1rem;
+  margin-inline: 0.5rem;
+  padding: 1rem;
+
+  text-align: left;
+  cursor: grab;
+
+  border-radius: 5px;
+}

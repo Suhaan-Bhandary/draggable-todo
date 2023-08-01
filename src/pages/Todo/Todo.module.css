@@ -1,0 +1,21 @@
+.Todo {
+  background-color: rgb(var(--bg-light));
+  text-align: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding-block: 1rem;
+}
+
+.Todo > h1 {
+  margin-bottom: 1rem;
+}
+
+.TodoContainer {
+  margin: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  grid-gap: 2rem;
+}

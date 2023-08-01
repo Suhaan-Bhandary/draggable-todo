@@ -1,0 +1,12 @@
+.CardList {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  box-shadow: var(--box-shadow);
+}
+
+.CardsContainer {
+  overflow: auto;
+  scrollbar-gutter: stable both-edges;
+}
