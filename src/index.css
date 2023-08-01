@@ -166,3 +166,7 @@ code {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
+.default-button:hover {
+  background-color: rgb(var(--accent-color-dark));
+}

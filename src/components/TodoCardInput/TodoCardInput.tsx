@@ -28,7 +28,9 @@ function TodoCardInput({ addCardToTodoSection }: Props) {
         onChange={handleTodoChange}
         placeholder="Add a todo..."
       />
-      <button type="submit">Add</button>
+      <button type="submit" className="default-button">
+        Add
+      </button>
     </form>
   );
 }
