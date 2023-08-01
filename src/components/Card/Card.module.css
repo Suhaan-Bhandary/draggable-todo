@@ -1,4 +1,5 @@
 .Card {
+  position: relative;
   background-color: lightgrey;
   margin-block: 1rem;
   margin-inline: 0.5rem;
@@ -12,4 +13,23 @@
 
 .cardDragging {
   border: 2px solid blue;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  width: 24px;
+  aspect-ratio: 1/1;
+  font-size: 0.8rem;
+
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.deleteButton:hover {
+  color: red;
+  border-color: red;
 }

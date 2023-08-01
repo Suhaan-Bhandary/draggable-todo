@@ -5,9 +5,10 @@ import styles from "./Card.module.css";
 type Props = {
   data: CardData;
   sectionTitle: string;
+  removeCardFromSection: (cardId: string, sectionTitle: string) => void;
 };
 
-function Card({ data, sectionTitle }: Props) {
+function Card({ data, sectionTitle, removeCardFromSection }: Props) {
   const [isDragged, setIsDragged] = useState(false);
 
   const handleCardDrag = (event: React.DragEvent) => {
@@ -27,7 +28,13 @@ function Card({ data, sectionTitle }: Props) {
       onDragStart={handleCardDrag}
       onDragEnd={handleCardDragLeave}
     >
-      {data.content}
+      <p>{data.content}</p>
+      <button
+        className={styles.deleteButton}
+        onClick={() => removeCardFromSection(data.id, sectionTitle)}
+      >
+        X
+      </button>
     </div>
   );
 }

@@ -60,7 +60,21 @@ const useTodoData = () => {
     setTodoData(newData);
   };
 
-  return { todoData, moveCardToNewSection };
+  const removeCardFromSection = (cardId: string, sectionTitle: string) => {
+    let newData = structuredClone(todoData);
+
+    // Remove card and store it in variable
+    newData = newData.map((section) => {
+      if (section.title == sectionTitle) {
+        section.cards = section.cards.filter((card) => card.id != cardId);
+      }
+      return section;
+    });
+
+    setTodoData(newData);
+  };
+
+  return { todoData, moveCardToNewSection, removeCardFromSection };
 };
 
 export default useTodoData;

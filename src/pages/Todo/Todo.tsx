@@ -3,7 +3,8 @@ import useTodoData from "../../hooks/useTodoData";
 import styles from "./Todo.module.css";
 
 function Todo() {
-  const { todoData, moveCardToNewSection } = useTodoData();
+  const { todoData, moveCardToNewSection, removeCardFromSection } =
+    useTodoData();
 
   return (
     <div className={styles.Todo}>
@@ -15,6 +16,7 @@ function Todo() {
               key={section.title}
               section={section}
               moveCardToNewSection={moveCardToNewSection}
+              removeCardFromSection={removeCardFromSection}
             />
           ))}
         </div>

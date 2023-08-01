@@ -6,9 +6,14 @@ import styles from "./CardList.module.css";
 type Props = {
   section: TodoSection;
   moveCardToNewSection: (cardId: string, from: string, to: string) => void;
+  removeCardFromSection: (cardId: string, sectionTitle: string) => void;
 };
 
-function CardList({ section, moveCardToNewSection }: Props) {
+function CardList({
+  section,
+  moveCardToNewSection,
+  removeCardFromSection,
+}: Props) {
   const [isDraggedOver, setIsDraggedOver] = useState(false);
 
   const handleDragOver = (event: React.DragEvent) => {
@@ -43,7 +48,12 @@ function CardList({ section, moveCardToNewSection }: Props) {
         onDragLeave={handleDragLeave}
       >
         {section.cards.map((data) => (
-          <Card key={data.id} data={data} sectionTitle={section.title} />
+          <Card
+            key={data.id}
+            data={data}
+            sectionTitle={section.title}
+            removeCardFromSection={removeCardFromSection}
+          />
         ))}
       </div>
     </div>
