@@ -40,7 +40,7 @@ function CardList({
         isDraggedOver ? styles.draggedOver : ""
       }`}
     >
-      <h2>{section.title}</h2>
+      <h2 className={styles.sectionTitle}>{section.title}</h2>
       <div
         className={styles.CardsContainer}
         onDrop={handleCardDrop}

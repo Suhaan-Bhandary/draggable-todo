@@ -7,6 +7,10 @@
   box-shadow: var(--box-shadow);
 }
 
+.sectionTitle {
+  user-select: none;
+}
+
 .CardsContainer {
   flex-grow: 1;
   overflow: auto;
