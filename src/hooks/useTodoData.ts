@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { CardData, TodoData } from "../types/todo.types";
+import getFormattedDateFromTime from "../utils/getFormattedDateFromTime";
 
 const initialData = [
   {
@@ -74,7 +76,30 @@ const useTodoData = () => {
     setTodoData(newData);
   };
 
-  return { todoData, moveCardToNewSection, removeCardFromSection };
+  const addCardToTodoSection = (content: string) => {
+    let newData = structuredClone(todoData);
+
+    // Remove card and store it in variable
+    newData = newData.map((section) => {
+      if (section.title == "Todo") {
+        section.cards.push({
+          id: uuidv4(),
+          content: content,
+          date: getFormattedDateFromTime(new Date()),
+        });
+      }
+      return section;
+    });
+
+    setTodoData(newData);
+  };
+
+  return {
+    todoData,
+    addCardToTodoSection,
+    removeCardFromSection,
+    moveCardToNewSection,
+  };
 };
 
 export default useTodoData;
