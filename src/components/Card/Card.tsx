@@ -21,7 +21,7 @@ function Card({ data }: Props) {
     <div
       className={`${styles.Card} ${isDragged ? styles.cardDragging : ""}`}
       draggable
-      onDrag={handleCardDrag}
+      onDragStart={handleCardDrag}
       onDragEnd={handleCardDragLeave}
     >
       {data.content}
