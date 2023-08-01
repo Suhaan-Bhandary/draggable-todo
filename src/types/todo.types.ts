@@ -6,6 +6,7 @@ export type TodoSection = {
 };
 
 export type CardData = {
+  id: string;
   content: string;
   date: string;
 };
