@@ -1,26 +1,26 @@
-import { useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import { v4 as uuidv4 } from "uuid";
 import { CardData, TodoData } from "../types/todo.types";
 import getFormattedDateFromTime from "../utils/getFormattedDateFromTime";
 
-const initialData = [
+const initialValue = [
   {
     title: "Todo",
     cards: [
       {
         id: "1",
-        content: "1",
-        date: "01/01/2022",
+        content: "Todo 1",
+        date: "01/08/2023",
       },
       {
         id: "2",
-        content: "2",
-        date: "01/01/2022",
+        content: "Todo 2",
+        date: "01/08/2023",
       },
       {
         id: "3",
-        content: "3",
-        date: "01/01/2022",
+        content: "Todo 3",
+        date: "01/08/2023",
       },
     ],
   },
@@ -35,7 +35,10 @@ const initialData = [
 ];
 
 const useTodoData = () => {
-  const [todoData, setTodoData] = useState<TodoData>(initialData);
+  const [todoData, setTodoData] = useLocalStorage<TodoData>(
+    "todo-data",
+    initialValue
+  );
 
   const moveCardToNewSection = (cardId: string, from: string, to: string) => {
     // If from and to are same then ignore
